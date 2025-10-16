@@ -20,13 +20,13 @@ body {
 
 body {
     margin: 0;
-    font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(255, 90, 26, 0.03), transparent 8%),
-        linear-gradient(180deg, #050409 0%, #0b0a10 100%);
+    font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(255, 90, 26, 0.03), transparent 8%), linear-gradient(180deg, #050409 0%, #0b0a10 100%);
     color: #fff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
 }
 
@@ -36,23 +36,36 @@ header.nav {
     position: fixed;
     top: 18px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 60;
     width: min(92%, 1100px);
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 10px 18px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
     border-radius: 999px;
     box-shadow: 0 6px 30px rgba(2, 2, 6, 0.7);
+    -webkit-backdrop-filter: blur(8px) saturate(1.05);
     backdrop-filter: blur(8px) saturate(1.05);
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .brand {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     gap: 12px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     font-weight: 700;
     letter-spacing: 0.6px;
@@ -63,6 +76,7 @@ header.nav {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+    background: -webkit-linear-gradient(top, var(--accent), var(--accent2));
     background: linear-gradient(180deg, var(--accent), var(--accent2));
     box-shadow: 0 6px 18px rgba(255, 90, 26, 0.25), 0 0 20px rgba(255, 90, 26, 0.06) inset;
 }
@@ -75,7 +89,10 @@ nav a {
     font-size: 0.9rem;
     padding: 8px 12px;
     border-radius: 999px;
-    transition: all .18s ease;
+    -webkit-transition: all 0.18s ease;
+    -moz-transition: all 0.18s ease;
+    -o-transition: all 0.18s ease;
+    transition: all 0.18s ease;
 }
 
 nav a:hover,
@@ -92,6 +109,8 @@ nav a.active {
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 120px 6vw 80px;
     position: relative;
@@ -127,13 +146,20 @@ p.lead {
 }
 
 .cta-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 12px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .btn {
+    background: -webkit-linear-gradient(left, var(--accent), var(--accent2));
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     color: #080607;
     padding: 12px 18px;
@@ -171,7 +197,11 @@ p.lead {
 /* --- Stats --- */
 
 .stats {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 14px;
     margin-top: 18px;
@@ -186,7 +216,7 @@ p.lead {
     border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-/* --- Sections générales et projets --- */
+/* --- Sections --- */
 
 main section {
     padding: 84px 6vw;
@@ -210,6 +240,8 @@ section h2 {
 
 .projects-row {
     margin-top: 18px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     overflow-x: auto;
     gap: 18px;
@@ -222,44 +254,59 @@ section h2 {
 .proj {
     min-width: clamp(280px, 80vw, 340px);
     max-width: 340px;
+    -webkit-flex: 0 0 clamp(280px, 80vw, 340px);
+    -ms-flex: 0 0 clamp(280px, 80vw, 340px);
     flex: 0 0 clamp(280px, 80vw, 340px);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: 14px;
     padding: 16px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 12px;
     border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: transform .18s ease, box-shadow .18s ease;
+    -webkit-transition: -webkit-transform 0.18s ease, box-shadow 0.18s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .proj:hover {
+    -webkit-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
     transform: translateY(-8px);
     box-shadow: 0 30px 60px rgba(2, 2, 6, 0.6);
 }
 
-/* --- IMAGE DU PROJET --- */
 .proj .thumb {
     position: relative;
     height: min(160px, 40vw);
     border-radius: 10px;
     overflow: hidden;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-/* Image entière, non rognée */
 .proj .thumb img {
     width: 100%;
     height: auto;
+    -o-object-fit: contain;
     object-fit: contain;
+    -webkit-filter: blur(6px) brightness(0.7);
     filter: blur(6px) brightness(0.7);
+    -webkit-transition: -webkit-filter 0.4s ease, -webkit-transform 0.4s ease;
     transition: filter 0.4s ease, transform 0.4s ease;
 }
 
-/* Texte au-dessus */
 .proj .thumb span {
     position: absolute;
     color: var(--accent2);
@@ -269,9 +316,11 @@ section h2 {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* Survol : image plus nette */
 .proj:hover .thumb img {
+    -webkit-filter: blur(2px) brightness(0.9);
     filter: blur(2px) brightness(0.9);
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
     transform: scale(1.03);
 }
 
@@ -308,7 +357,11 @@ footer {
     }
 
     .cta-row {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
         align-items: stretch;
     }
 
@@ -358,6 +411,7 @@ a.project-cta {
     color: var(--accent);
 }
 
+/* --- Scrollbar universel --- */
 .projects-row::-webkit-scrollbar {
     height: 10px;
 }
@@ -365,4 +419,10 @@ a.project-cta {
 .projects-row::-webkit-scrollbar-thumb {
     background: rgba(255, 90, 26, 0.18);
     border-radius: 10px;
+}
+
+/* Firefox */
+.projects-row {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 90, 26, 0.18) transparent;
 }
