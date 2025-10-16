@@ -1,0 +1,4 @@
+www.obsiwebs.com
+git add CNAME
+git commit -m "Ajout du domaine personnalisé"
+git push
