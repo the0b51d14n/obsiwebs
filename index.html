@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>🌋 — Obsiwebs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="obsiwebs.css">
+</head>
+
+<body>
+    <div id="tsparticles" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+
+    <header class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="brand">
+            <div class="dot" aria-hidden="true"></div>
+            <div>🌋 • Obsiwebs</div>
+        </div>
+        <nav>
+            <a href="#home" class="navlink active">Accueil</a>
+            <a href="#about" class="navlink">À propos</a>
+            <a href="#projects" class="navlink">Projets</a>
+            <a href="#contact" class="navlink">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="copy">
+            <div class="eyebrow">Designer web — Développeur web</div>
+            <h1 id="hero-title">Obsiwebs — l'éruption créative & interface futuriste</h1>
+            <p class="lead">Né de la fusion du code et du design, Obsiwebs est mon cratère créatif — là où chaque ligne
+                de code devient lave, chaque interface une éruption d'innovation.</p>
+            <div class="cta-row">
+                <button class="btn"
+                    onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">Voir les
+                    projets</button>
+                <a class="btn ghost" href="#contact">Me contacter</a>
+            </div>
+
+            <div class="stats" aria-hidden="true">
+                <div class="stat">HTML / CSS / JS</div>
+                <div class="stat">Animations Canvas</div>
+                <div class="stat">Design épuré</div>
+            </div>
+        </div>
+
+        <div class="visual" role="img" aria-label="Illustration animée d'un volcan">
+            <canvas id="scene" style="width:100%; height:100%; display:block;"></canvas>
+            <div class="fog" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">À propos</h2>
+            <div class="section-panel">
+                <p>Je conçois des interfaces où l'animation sert la clarté : micro-interactions maîtrisées, hiérarchie
+                    typographique nette et espaces respirants. Ce portfolio est une démo technique — la scène du volcan
+                    montre des techniques canvas utiles pour visualisations, hero-animations et backgrounds dynamiques.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projets</h2>
+            <div class="projects-row" role="list" aria-label="Liste de projets">
+                <article class="proj" role="listitem">
+                    <div class="thumb">Projet A</div>
+                    <h3>Interface Dashboard</h3>
+                    <p>Dashboard temps réel avec visualisations performantes et design minimaliste. Technologies :
+                        WebGL, Canvas, D3.</p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet A">En savoir + →</a>
+                </article>
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">Projet B</div>
+                    <h3>Expérience interactive</h3>
+                    <p>Prototype interactif avec animations et transitions contextuelles, pensé mobile-first.</p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet B">En savoir + →</a>
+                </article>
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">Projet C</div>
+                    <h3>Branding numérique</h3>
+                    <p>Identité visuelle et composants UI pour une startup tech. Livrables : design system et kit UI.
+                    </p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet C">En savoir + →</a>
+                </article>
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">Projet D</div>
+                    <h3>Visualisation</h3>
+                    <p>Visualisation de données volumineuses, optimisation et UX guides d'interprétation visuelle.</p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet D">En savoir + →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <div class="section-panel"
+                style="display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center;">
+
+                <p class="muted" style="max-width: 45ch;">Envie de collaborer ? Discutons. Je réponds habituellement
+                    sous 48h.</p>
+
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+                    style="display:flex; flex-direction:column; gap:12px; width:100%; max-width:400px;">
+                    <input type="hidden" name="access_key" value="7d0cf3fb-81eb-4fd1-8da1-0f51285f9b4f">
+                    <input type="hidden" name="subject" value="Nouveau message - Obsiwebs Portfolio">
+
+                    <input type="text" name="name" placeholder="Votre nom" required
+                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; box-sizing:border-box;">
+
+                    <input type="email" name="email" placeholder="Votre adresse email" required
+                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; box-sizing:border-box;">
+
+                    <textarea name="message" placeholder="Votre message..." required rows="4"
+                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; resize:vertical; box-sizing:border-box;"></textarea>
+
+                    <button class="btn" type="submit" style="margin-top: 8px;">
+                        Envoyer le message
+                    </button>
+
+                    <p id="form-message" style="margin-top: 10px;"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 48px 6vw 60px; max-width: 1100px; margin: 0 auto;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px 40px; padding-bottom: 20px;">
+
+            <div style="display: flex; flex-direction: column; min-width: 120px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 1rem; color: #fff;">Navigation</h4>
+                <a href="#home"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">Accueil</a>
+                <a href="#about"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">À
+                    propos</a>
+                <a href="#projects"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">Projets</a>
+                <a href="#contact" style="color: var(--accent2); text-decoration: none; font-size: 0.9rem;">Contact</a>
+            </div>
+
+            <div style="min-width: 200px; max-width: 300px; text-align: center;">
+                <div class="brand" style="margin-bottom: 8px; justify-content: center;">
+                    <div class="dot" aria-hidden="true"></div>
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #fff;">🌋 • Obsiwebs</div>
+                </div>
+                <p style="font-size: 0.9rem; margin: 0;">
+                    <small>&copy; <span id="year"></span> — Portfolio. Tous droits réservés.</small>
+                </p>
+                <p style="font-size: 0.8rem; margin: 6px 0 0; color: var(--accent2);">
+                    Design et code par Obsiwebs.
+                </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; min-width: 120px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 1rem; color: #fff;">Réseaux</h4>
+
+                <a href="URL_DE_VOTRE_INSTAGRAM" target="_blank"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.2s ease;">
+                    <i class="fab fa-instagram" style="font-size: 1.1rem; margin-right: 8px;"></i>
+                </a>
+
+                <a href="URL_DE_VOTRE_GITHUB" target="_blank"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.2s ease;">
+                    <i class="fab fa-github" style="font-size: 1.1rem; margin-right: 8px;"></i>
+                </a>
+
+                <a href="mailto:VOTRE_ADRESSE_EMAIL"
+                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease;">
+                    <i class="fas fa-envelope" style="font-size: 1.1rem; margin-right: 8px;"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.04); margin: 30px 0 0;">
+
+    </footer>
+
+    <script src="obsiwebs.js"></script>
+
+</body>
+
+</html>
