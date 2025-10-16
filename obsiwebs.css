@@ -10,12 +10,12 @@
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 body {
@@ -30,14 +30,15 @@ body {
     scroll-behavior: smooth;
 }
 
+/* --- Navigation --- */
+
 header.nav {
     position: fixed;
     top: 18px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 60;
-    width: 92%;
-    max-width: 1100px;
+    width: min(92%, 1100px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,7 +56,7 @@ header.nav {
     align-items: center;
     font-weight: 700;
     letter-spacing: 0.6px;
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 1.5vw, 0.95rem);
 }
 
 .brand .dot {
@@ -84,10 +85,12 @@ nav a.active {
     box-shadow: 0 6px 18px rgba(2, 2, 6, 0.5);
 }
 
+/* --- Hero --- */
+
 .hero {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 520px;
+    grid-template-columns: 1fr;
     gap: 48px;
     align-items: center;
     padding: 120px 6vw 80px;
@@ -113,18 +116,19 @@ h1 {
     line-height: 1.02;
     letter-spacing: -0.6px;
     font-weight: 800;
-    color: linear-gradient(#fff, #ddd);
+    color: #fff;
 }
 
 p.lead {
     color: var(--muted);
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.8vw, 1.05rem);
     margin-bottom: 26px;
     max-width: 64ch;
 }
 
 .cta-row {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     align-items: center;
 }
@@ -138,6 +142,8 @@ p.lead {
     border: none;
     cursor: pointer;
     box-shadow: 0 10px 30px rgba(255, 90, 26, 0.12);
+    min-width: 140px;
+    text-align: center;
 }
 
 .btn.ghost {
@@ -148,10 +154,12 @@ p.lead {
     border-radius: 10px;
 }
 
+/* --- Visual --- */
+
 .visual {
     position: relative;
     width: 100%;
-    height: 520px;
+    height: min(520px, 60vi);
     max-width: 520px;
     border-radius: 18px;
     overflow: hidden;
@@ -160,8 +168,11 @@ p.lead {
     box-shadow: 0 20px 80px rgba(2, 2, 6, 0.7);
 }
 
+/* --- Stats --- */
+
 .stats {
     display: flex;
+    flex-wrap: wrap;
     gap: 14px;
     margin-top: 18px;
     color: var(--muted);
@@ -174,6 +185,8 @@ p.lead {
     background: var(--glass);
     border: 1px solid rgba(255, 255, 255, 0.02);
 }
+
+/* --- Sections générales et projets --- */
 
 main section {
     padding: 84px 6vw;
@@ -189,7 +202,7 @@ section h2 {
 
 .section-panel {
     background: linear-gradient(180deg, var(--panel), rgba(255, 255, 255, 0.01));
-    padding: 28px;
+    padding: clamp(20px, 4vw, 28px);
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.03);
     box-shadow: 0 20px 40px rgba(2, 2, 6, 0.6);
@@ -204,10 +217,12 @@ section h2 {
     -webkit-overflow-scrolling: touch;
 }
 
+/* --- Cartes projets --- */
+
 .proj {
-    min-width: 340px;
+    min-width: clamp(280px, 80vw, 340px);
     max-width: 340px;
-    flex: 0 0 340px;
+    flex: 0 0 clamp(280px, 80vw, 340px);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
     border-radius: 14px;
     padding: 16px;
@@ -223,28 +238,55 @@ section h2 {
     box-shadow: 0 30px 60px rgba(2, 2, 6, 0.6);
 }
 
+/* --- IMAGE DU PROJET --- */
 .proj .thumb {
-    height: 160px;
+    position: relative;
+    height: min(160px, 40vw);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255, 90, 26, 0.08), rgba(255, 184, 107, 0.03));
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    color: var(--accent2);
     border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Image entière, non rognée */
+.proj .thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: blur(6px) brightness(0.7);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Texte au-dessus */
+.proj .thumb span {
+    position: absolute;
+    color: var(--accent2);
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Survol : image plus nette */
+.proj:hover .thumb img {
+    filter: blur(2px) brightness(0.9);
+    transform: scale(1.03);
 }
 
 .proj h3 {
     margin: 0;
-    font-size: 1.05rem
+    font-size: 1.05rem;
 }
 
 .proj p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.95rem
+    font-size: 0.95rem;
 }
+
+/* --- Footer --- */
 
 footer {
     padding: 48px 6vw 120px;
@@ -252,84 +294,75 @@ footer {
     text-align: center;
 }
 
-.fog {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 20;
-    mix-blend-mode: screen;
-}
+/* --- Media Queries --- */
 
-.fog::before,
-.fog::after {
-    content: '';
-    position: absolute;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(50% 20% at 20% 10%, rgba(255, 140, 60, 0.06), transparent 12%),
-        radial-gradient(50% 20% at 80% 30%, rgba(255, 90, 26, 0.035), transparent 12%);
-    transform: translateY(0);
-    filter: blur(36px);
-    animation: driftSlow 14s linear infinite;
-}
-
-.fog::after {
-    filter: blur(48px);
-    opacity: 0.6;
-    animation-duration: 20s;
-    animation-direction: reverse;
-}
-
-@keyframes driftSlow {
-    from {
-        transform: translateY(0) translateX(0)
-    }
-
-    to {
-        transform: translateY(-18%) translateX(6%)
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr 520px;
     }
 }
 
-@media (max-width:980px) {
+@media (max-width: 767px) {
+    nav a {
+        display: none;
+    }
+
+    .cta-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
     .hero {
         grid-template-columns: 1fr;
         padding-top: 120px;
-        gap: 28px
+        gap: 28px;
     }
 
     .visual {
-        height: 420px;
-        max-width: 100%
+        height: min(420px, 60vw);
+        max-width: 100%;
+    }
+
+    main section {
+        padding: 60px 6vw;
     }
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
     header.nav {
-        padding: 8px 12px
+        padding: 8px 12px;
     }
 
-    nav a {
-        display: none
+    body {
+        padding-bottom: 50px;
     }
 }
+
+/* --- Divers --- */
 
 .muted {
-    color: var(--muted)
+    color: var(--muted);
 }
 
 a.project-cta {
     display: inline-block;
     margin-top: 10px;
     font-weight: 700;
-    color: var(--accent)
+    color: var(--accent);
 }
 
 .projects-row::-webkit-scrollbar {
-    height: 10px
+    height: 10px;
 }
 
 .projects-row::-webkit-scrollbar-thumb {
     background: rgba(255, 90, 26, 0.18);
-    border-radius: 10px
+    border-radius: 10px;
 }
