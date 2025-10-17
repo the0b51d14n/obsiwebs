@@ -30,8 +30,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* --- Navigation --- */
-
 header.nav {
     position: fixed;
     top: 18px;
@@ -101,8 +99,6 @@ nav a.active {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
     box-shadow: 0 6px 18px rgba(2, 2, 6, 0.5);
 }
-
-/* --- Hero --- */
 
 .hero {
     min-height: 100vh;
@@ -180,8 +176,6 @@ p.lead {
     border-radius: 10px;
 }
 
-/* --- Visual --- */
-
 .visual {
     position: relative;
     width: 100%;
@@ -193,8 +187,6 @@ p.lead {
     border: 1px solid rgba(255, 255, 255, 0.03);
     box-shadow: 0 20px 80px rgba(2, 2, 6, 0.7);
 }
-
-/* --- Stats --- */
 
 .stats {
     display: -webkit-flex;
@@ -215,8 +207,6 @@ p.lead {
     background: var(--glass);
     border: 1px solid rgba(255, 255, 255, 0.02);
 }
-
-/* --- Sections --- */
 
 main section {
     padding: 84px 6vw;
@@ -248,8 +238,6 @@ section h2 {
     padding-bottom: 8px;
     -webkit-overflow-scrolling: touch;
 }
-
-/* --- Cartes projets --- */
 
 .proj {
     min-width: clamp(280px, 80vw, 340px);
@@ -335,15 +323,11 @@ section h2 {
     font-size: 0.95rem;
 }
 
-/* --- Footer --- */
-
 footer {
     padding: 48px 6vw 120px;
     color: var(--muted);
     text-align: center;
 }
-
-/* --- Media Queries --- */
 
 @media (min-width: 768px) {
     .hero {
@@ -398,8 +382,6 @@ footer {
     }
 }
 
-/* --- Divers --- */
-
 .muted {
     color: var(--muted);
 }
@@ -411,7 +393,6 @@ a.project-cta {
     color: var(--accent);
 }
 
-/* --- Scrollbar universel --- */
 .projects-row::-webkit-scrollbar {
     height: 10px;
 }
@@ -421,8 +402,8 @@ a.project-cta {
     border-radius: 10px;
 }
 
-/* Firefox */
 .projects-row {
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 90, 26, 0.18) transparent;
 }
+
