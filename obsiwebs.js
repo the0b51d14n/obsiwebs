@@ -246,13 +246,12 @@
 
 })();
 
-// ---------- FORMULAIRE CONTACT (corrigé sans redirection) ----------
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
 if (form) {
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); // empêche toute redirection
+        event.preventDefault();
 
         formMessage.textContent = '';
         formMessage.style.color = '';
