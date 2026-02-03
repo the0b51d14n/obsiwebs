@@ -1,9 +1,5 @@
 (function () {
-    'use strict';
-
     const canvas = document.getElementById('scene');
-    if (!canvas) return;
-
     const ctx = canvas.getContext('2d', { alpha: true });
     let W, H, DPR;
 
@@ -19,14 +15,15 @@
         canvas.height = H;
         ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     }
-
     window.addEventListener('resize', resize);
     resize();
 
     function drawVolcanoBase(alpha = 1) {
         ctx.save();
         ctx.globalAlpha = alpha;
+        ctx.translate(0, 0);
 
+        // ground
         ctx.fillStyle = 'rgba(6,6,8,0.85)';
         ctx.fillRect(0, H / 2, canvas.clientWidth, canvas.clientHeight / 2);
 
@@ -107,7 +104,7 @@
             x: cx + xNoise,
             y: canvas.clientHeight * 0.45 + (Math.random() * 40 - 20),
             vx: (Math.random() - 0.5) * 0.6,
-            vy: -(0.6 + Math.random() * 1.6),
+            vy: - (0.6 + Math.random() * 1.6),
             r: 2 + Math.random() * 3,
             life: 120 + Math.random() * 120,
             age: 0,
@@ -231,19 +228,11 @@
     for (let i = 0; i < 26; i++) spawnParticle();
 
     window.requestAnimationFrame(frame);
-})();
 
-(function () {
-    'use strict';
-
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     const navlinks = document.querySelectorAll('.navlink');
     const sections = Array.from(navlinks).map(a => document.querySelector(a.getAttribute('href')));
-
     function onScroll() {
         const y = window.scrollY + window.innerHeight * 0.25;
         let activeIndex = 0;
@@ -252,21 +241,18 @@
         });
         navlinks.forEach((a, i) => a.classList.toggle('active', i === activeIndex));
     }
-
     window.addEventListener('scroll', onScroll);
     onScroll();
+
 })();
 
-(function () {
-    'use strict';
+// ---------- FORMULAIRE CONTACT (corrigé sans redirection) ----------
+const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 
-    const form = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
-
-    if (!form || !formMessage) return;
-
+if (form) {
     form.addEventListener('submit', function (event) {
-        event.preventDefault();
+        event.preventDefault(); // empêche toute redirection
 
         formMessage.textContent = '';
         formMessage.style.color = '';
@@ -311,4 +297,4 @@
                 submitButton.textContent = 'Envoyer le message';
             });
     });
-})();
+}
