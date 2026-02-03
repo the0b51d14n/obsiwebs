@@ -75,8 +75,7 @@
                     </div>
                     <h3>PorteFolio - Obsiwebs</h3>
                     <p>Design sombre, épuré et futuriste, avec animations fluides et typographie minimaliste.</p>
-                    <a class="project-cta" href="https://www.obsiwebs.com/" aria-label="Voir le portfolio Obsiwebs">En
-                        savoir + →</a>
+                    <a class="project-cta" href="https://www.obsiwebs.com/" aria-label="Voir le portfolio Obsiwebs">En savoir + →</a>
                 </article>
 
 
@@ -130,8 +129,7 @@
 
                     <input type="email" name="email" placeholder="Votre adresse email" required class="form-input">
 
-                    <textarea name="message" placeholder="Votre message..." required rows="4"
-                        class="form-textarea"></textarea>
+                    <textarea name="message" placeholder="Votre message..." required rows="4" class="form-textarea"></textarea>
 
                     <button class="btn" type="submit">Envoyer le message</button>
 
@@ -164,8 +162,191 @@
 
             <div class="footer-section">
                 <h4>Réseaux</h4>
-                <a href="https://www.instagram.com/obsiwebs/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram">
+                <a href="https://www.instagram.com/obsiwebs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/the0b51d14n" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:theo.supinfo@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+    </footer>
+
+    <script src="obsiwebs.js"></script>
+
+</body>
+
+</html>
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>🌋 — Obsiwebs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="obsiwebs.css">
+</head>
+
+<body>
+    <div id="tsparticles" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+
+    <header class="nav" role="navigation" aria-label="Navigation principale">
+        <div class="brand">
+            <div class="dot" aria-hidden="true"></div>
+            <div>🌋 • Obsiwebs</div>
+        </div>
+        <nav>
+            <a href="#home" class="navlink active">Accueil</a>
+            <a href="#about" class="navlink">À propos</a>
+            <a href="#projects" class="navlink">Projets</a>
+            <a href="#contact" class="navlink">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="copy">
+            <div class="eyebrow">Designer web — Développeur web</div>
+            <h1 id="hero-title">Obsiwebs — l'éruption créative & interface futuriste</h1>
+            <p class="lead">Né de la fusion du code et du design, Obsiwebs est mon cratère créatif — là où chaque ligne
+                de code devient lave, chaque interface une éruption d'innovation.</p>
+            <div class="cta-row">
+                <button class="btn"
+                    onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">Voir les
+                    projets</button>
+                <a class="btn ghost" href="#contact">Me contacter</a>
+            </div>
+
+            <div class="stats" aria-hidden="true">
+                <div class="stat">HTML / CSS / JS</div>
+                <div class="stat">Animations Canvas</div>
+                <div class="stat">Design épuré</div>
+            </div>
+        </div>
+
+        <div class="visual" role="img" aria-label="Illustration animée d'un volcan">
+            <canvas id="scene" style="width:100%; height:100%; display:block;"></canvas>
+            <div class="fog" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">À propos</h2>
+            <div class="section-panel">
+                <p>Je conçois des interfaces où l'animation sert la clarté : micro-interactions maîtrisées, hiérarchie
+                    typographique nette et espaces respirants. Ce portfolio est une démo technique — la scène du volcan
+                    montre des techniques canvas utiles pour visualisations, hero-animations et backgrounds dynamiques.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projets</h2>
+            <div class="projects-row" role="list" aria-label="Liste de projets">
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">
+                        <img src="obsiwebs off.png" alt="Aperçu du portfolio Obsiwebs">
+                        <span>obsiwebs</span>
+                    </div>
+                    <h3>PorteFolio - Obsiwebs</h3>
+                    <p>Design sombre, épuré et futuriste, avec animations fluides et typographie minimaliste.</p>
+                    <a class="project-cta" href="https://www.obsiwebs.com/" aria-label="Voir le portfolio Obsiwebs">En savoir + →</a>
+                </article>
+
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">
+                        <img src="projet B.png" alt="Aperçu du projet B">
+                        <span>SPA - Boutique</span>
+                    </div>
+                    <h3>Conception interactive</h3>
+                    <p>Boutique en ligne pour la SPA, développée d'abord pour ordinateur puis optimisée pour tous les
+                        supports, alliant fluidité et dimension éducative.</p>
+                    <a class="project-cta" href="https://the0b51d14n.github.io/SPA---Boutique-en-ligne/"
+                        aria-label="Voir le projet B">En savoir + →</a>
+                </article>
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">
+                        <img src="#" alt="Aperçu du projet C">
+                        <span>Projet C</span>
+                    </div>
+                    <h3>Branding numérique</h3>
+                    <p>Identité visuelle et composants UI pour une startup tech. Livrables : design system et kit UI.
+                    </p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet C">En savoir + →</a>
+                </article>
+
+                <article class="proj" role="listitem">
+                    <div class="thumb">
+                        <img src="#" alt="Aperçu du projet D">
+                        <span>Projet D</span>
+                    </div>
+                    <h3>Visualisation</h3>
+                    <p>Visualisation de données volumineuses, optimisation et UX guides d'interprétation visuelle.</p>
+                    <a class="project-cta" href="#" aria-label="Voir le projet D">En savoir + →</a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <div class="section-panel contact-panel">
+                <p class="muted contact-intro">Envie de collaborer ? Discutons. Je réponds habituellement sous 48h.</p>
+
+                <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="7d0cf3fb-81eb-4fd1-8da1-0f51285f9b4f">
+                    <input type="hidden" name="subject" value="Nouveau message - Obsiwebs Portfolio">
+
+                    <input type="text" name="name" placeholder="Votre nom" required class="form-input">
+
+                    <input type="email" name="email" placeholder="Votre adresse email" required class="form-input">
+
+                    <textarea name="message" placeholder="Votre message..." required rows="4" class="form-textarea"></textarea>
+
+                    <button class="btn" type="submit">Envoyer le message</button>
+
+                    <p id="form-message" class="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="#home">Accueil</a>
+                <a href="#about">À propos</a>
+                <a href="#projects">Projets</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-branding">
+                <div class="brand">
+                    <div class="dot" aria-hidden="true"></div>
+                    <div>🌋 • Obsiwebs</div>
+                </div>
+                <p class="footer-copyright">
+                    <small>&copy; <span id="year"></span> — Portfolio. Tous droits réservés.</small>
+                </p>
+                <p class="footer-credit">Design et code par Obsiwebs.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Réseaux</h4>
+                <a href="https://www.instagram.com/obsiwebs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://github.com/the0b51d14n" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
