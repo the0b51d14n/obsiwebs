@@ -8,11 +8,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
     <link rel="stylesheet" href="obsiwebs.css">
 </head>
 
@@ -73,14 +68,15 @@
             <h2 id="projects-title">Projets</h2>
             <div class="projects-row" role="list" aria-label="Liste de projets">
 
-                <article class="proj">
+                <article class="proj" role="listitem">
                     <div class="thumb">
-                        <img src="obsiwebs off.png" alt="obsiwebs">
+                        <img src="obsiwebs off.png" alt="Aperçu du portfolio Obsiwebs">
                         <span>obsiwebs</span>
                     </div>
                     <h3>PorteFolio - Obsiwebs</h3>
                     <p>Design sombre, épuré et futuriste, avec animations fluides et typographie minimaliste.</p>
-                    <a class="project-cta" href="https://www.obsiwebs.com/">En savoir + →</a>
+                    <a class="project-cta" href="https://www.obsiwebs.com/" aria-label="Voir le portfolio Obsiwebs">En
+                        savoir + →</a>
                 </article>
 
 
@@ -90,19 +86,21 @@
                         <span>SPA - Boutique</span>
                     </div>
                     <h3>Conception interactive</h3>
-                    <p>Boutique en ligne pour la SPA, développée d’abord pour ordinateur puis optimisée pour tous les supports, alliant fluidité et dimension éducative.</p>
-                    <a class="project-cta" href="https://the0b51d14n.github.io/SPA---Boutique-en-ligne/" aria-label="Voir le projet B">En savoir + →</a>
+                    <p>Boutique en ligne pour la SPA, développée d'abord pour ordinateur puis optimisée pour tous les
+                        supports, alliant fluidité et dimension éducative.</p>
+                    <a class="project-cta" href="https://the0b51d14n.github.io/SPA---Boutique-en-ligne/"
+                        aria-label="Voir le projet B">En savoir + →</a>
                 </article>
 
                 <article class="proj" role="listitem">
                     <div class="thumb">
-                        <img src="projet C.png" alt="Aperçu du projet C">
-                        <span>Airsoft Arsenal</span>
+                        <img src="#" alt="Aperçu du projet C">
+                        <span>Projet C</span>
                     </div>
-                    <h3>Airsoft Arsenal</h3>
-                    <p>Création d'une bibliothèque/arsenal de réplique d'airsoft. (Attention, tout informations visible ne sont qu'une démonstration de compétences).
+                    <h3>Branding numérique</h3>
+                    <p>Identité visuelle et composants UI pour une startup tech. Livrables : design system et kit UI.
                     </p>
-                    <a class="project-cta" href="https://app-c829336a-e3d0-4d50-ad39-1c972ea0d00a.base44.app/home" aria-label="Voir le projet C">En savoir + →</a>
+                    <a class="project-cta" href="#" aria-label="Voir le projet C">En savoir + →</a>
                 </article>
 
                 <article class="proj" role="listitem">
@@ -121,88 +119,65 @@
 
         <section id="contact" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
-            <div class="section-panel"
-                style="display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center;">
+            <div class="section-panel contact-panel">
+                <p class="muted contact-intro">Envie de collaborer ? Discutons. Je réponds habituellement sous 48h.</p>
 
-                <p class="muted" style="max-width: 45ch;">Envie de collaborer ? Discutons. Je réponds habituellement
-                    sous 48h.</p>
-
-                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
-                    style="display:flex; flex-direction:column; gap:12px; width:100%; max-width:400px;">
+                <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="7d0cf3fb-81eb-4fd1-8da1-0f51285f9b4f">
                     <input type="hidden" name="subject" value="Nouveau message - Obsiwebs Portfolio">
 
-                    <input type="text" name="name" placeholder="Votre nom" required
-                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; box-sizing:border-box;">
+                    <input type="text" name="name" placeholder="Votre nom" required class="form-input">
 
-                    <input type="email" name="email" placeholder="Votre adresse email" required
-                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; box-sizing:border-box;">
+                    <input type="email" name="email" placeholder="Votre adresse email" required class="form-input">
 
                     <textarea name="message" placeholder="Votre message..." required rows="4"
-                        style="padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff;min-width:100%; resize:vertical; box-sizing:border-box;"></textarea>
+                        class="form-textarea"></textarea>
 
-                    <button class="btn" type="submit" style="margin-top: 8px;">
-                        Envoyer le message
-                    </button>
+                    <button class="btn" type="submit">Envoyer le message</button>
 
-                    <p id="form-message" style="margin-top: 10px;"></p>
+                    <p id="form-message" class="form-message"></p>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 48px 6vw 60px; max-width: 1100px; margin: 0 auto;">
-        <div
-            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px 40px; padding-bottom: 20px;">
-
-            <div style="display: flex; flex-direction: column; min-width: 120px;">
-                <h4 style="margin: 0 0 10px 0; font-size: 1rem; color: #fff;">Navigation</h4>
-                <a href="#home"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">Accueil</a>
-                <a href="#about"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">À
-                    propos</a>
-                <a href="#projects"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 6px;">Projets</a>
-                <a href="#contact" style="color: var(--accent2); text-decoration: none; font-size: 0.9rem;">Contact</a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <a href="#home">Accueil</a>
+                <a href="#about">À propos</a>
+                <a href="#projects">Projets</a>
+                <a href="#contact">Contact</a>
             </div>
 
-            <div style="min-width: 200px; max-width: 300px; text-align: center;">
-                <div class="brand" style="margin-bottom: 8px; justify-content: center;">
+            <div class="footer-branding">
+                <div class="brand">
                     <div class="dot" aria-hidden="true"></div>
-                    <div style="font-size: 1.1rem; font-weight: 800; color: #fff;">🌋 • Obsiwebs</div>
+                    <div>🌋 • Obsiwebs</div>
                 </div>
-                <p style="font-size: 0.9rem; margin: 0;">
+                <p class="footer-copyright">
                     <small>&copy; <span id="year"></span> — Portfolio. Tous droits réservés.</small>
                 </p>
-                <p style="font-size: 0.8rem; margin: 6px 0 0; color: var(--accent2);">
-                    Design et code par Obsiwebs.
-                </p>
+                <p class="footer-credit">Design et code par Obsiwebs.</p>
             </div>
 
-            <div style="display: flex; flex-direction: column; min-width: 120px;">
-                <h4 style="margin: 0 0 10px 0; font-size: 1rem; color: #fff;">Réseaux</h4>
-
-                <a href="https://www.instagram.com/obsiwebs/" target="_blank"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.2s ease;">
-                    <i class="fab fa-instagram" style="font-size: 1.1rem; margin-right: 8px;"></i>
+            <div class="footer-section">
+                <h4>Réseaux</h4>
+                <a href="https://www.instagram.com/obsiwebs/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
                 </a>
-
-                <a href="https://github.com/the0b51d14n" target="_blank"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; margin-bottom: 8px; transition: color 0.2s ease;">
-                    <i class="fab fa-github" style="font-size: 1.1rem; margin-right: 8px;"></i>
+                <a href="https://github.com/the0b51d14n" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
                 </a>
-
-                <a href="mailto:theo.supinfo@gmail.com"
-                    style="color: var(--accent2); text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease;">
-                    <i class="fas fa-envelope" style="font-size: 1.1rem; margin-right: 8px;"></i>
+                <a href="mailto:theo.supinfo@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
-
         </div>
 
-        <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.04); margin: 30px 0 0;">
-
+        <hr class="footer-divider">
     </footer>
 
     <script src="obsiwebs.js"></script>
@@ -210,11 +185,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
